@@ -1,6 +1,6 @@
     ///***** Урок 3
 /* /*     1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100. */
-/* const initFirst = () => {
+const initFirst = () => {
     let i = 0;
     while (i <=100) {
         let check = true;
@@ -13,10 +13,10 @@
         if (check) console.log(i);
         i++;
     }
-} */
+}
 //initFirst();
 
-/* function initSecond() {
+function initSecond() {
     const goods = [
         {
             title:"Колбаса",
@@ -39,14 +39,14 @@
             quantity: 1
         },
     ];
-    function countBasketPrice(array) { */
+    function countBasketPrice(array) {
      /*    let costGoods = 0; */
         /* for (const product of array) {
             const itemPrice = product.price * product.quantity;
             costGoods = costGoods + itemPrice;
             console.log(`${product.title} стоит ${itemPrice}`);
         } */
-/*         array.forEach(product => {
+        array.forEach(product => {
             const itemPrice = product.price * product.quantity;
             costGoods = costGoods + itemPrice;
             console.log(`${product.title} стоит ${itemPrice}`);
@@ -54,13 +54,12 @@
         console.log(`Итого ${costGoods}`);
     }
     countBasketPrice(goods);
-} */
+}
 //initSecond();
 
 /* 4.Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. 
 Выглядеть это должно так: for(…){// здесь пусто} */
-/* for(let n = 0; n <= 9; n++) */
-/* console.log(n); */
+//for(let n = 0; n <= 9; n++) console.log(n);
 
 /* 5. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5: */
 
@@ -68,4 +67,4 @@ let item = "x";
 for (let i = 0; i <= 20; i++) {
     console.log(item);
     item = item + "x"
-    }
+}
