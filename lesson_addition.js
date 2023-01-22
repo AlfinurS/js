@@ -15,8 +15,8 @@
  c. Добавить еще 3 загадки. Подсчитать количество правильных ответов, сообщить пользователю.
  d. (По желанию). В качестве верного ответа принимать несколько вариантов ответов. Например, «Стул», «стул», «табуретка» и так далее. */
 
-
- let isExit = false;
+/* 
+let isExit = false;
 
 const puzzleObject = {
     1: {
@@ -45,7 +45,6 @@ const puzzleObject = {
     },
 };
 
-
 function puzzleEng() {
     for (let i = 1; i <= 6 && !isExit; i++) {
         answerPuzzle = prompt(puzzleObject[i].question).toLowerCase();
@@ -57,6 +56,57 @@ function puzzleEng() {
             alert("Увы, не угадал!");
             puzzleEng();
         }
+    } */
+/* } */
+/* puzzleEng(); */
+
+
+/* 1. Функции для работы с массивами
+a. Написать функцию, которая принимает в качестве параметра число n. 
+Результатом работы функции является массив из N элементов со значениями 1, 2, 3… n.
+ */
+let n = +prompt ("Введите число от 0 до 10");
+const array = [];
+function generateArray(length) {
+    for (i = 1; i <= length; i++) {
+        array.push(i);
     }
+    return array;
 }
-puzzleEng();
+generateArray(n);
+
+/* b. Написать функцию, которая принимает массив чисел. Результатом работы функции является сумма чисел этого массива. */
+
+/* function takeArray () {
+let summaNumbers = array.reduce(function(a,b) {
+    return a+b;
+})
+console.log(summaNumbers);
+ }
+ takeArray (); */
+
+/* c. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает максимальное число. 
+d. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает минимальное число.*/
+/* let maxNumb = Math.max.apply(null, array);
+console.log(maxNumb); */
+/* let maxNumb = Math.min.apply(null, array);
+console.log(maxNumb);
+ */
+/* 
+f. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает только четные числа из этого массива. 
+Чтобы определить четность числа, воспользуйтесь оператором для подсчета остатка от деления: x % 2.
+Если остаток от деления числа на 2 равен 0, число будет четное. */
+
+
+/* let summaNumbers = null;
+
+function takeArray () {
+    summaNumbers = array.reduce(function(a,b) {
+        return a*b;
+    })
+    console.log(summaNumbers);
+     }
+takeArray () */
+
+let evenNumbers = array.filter((x) => x % 2 === 0);
+console.log(evenNumbers);

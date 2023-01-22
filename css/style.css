@@ -1,0 +1,39 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 700px;
+  height: 700px;
+  margin: 30px auto;
+  border: 1px solid black;
+}
+.row {
+  display: flex;
+}
+.cell {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 18px;
+}
+.white {
+  background-color: #fff;
+}
+.black {
+  background-color: rgb(134, 129, 129);
+}
+.figureWhite {
+  color: rgb(90, 90, 90);
+}
+.figureBlack {
+  color: rgb(33, 32, 32);
+}
