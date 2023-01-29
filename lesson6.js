@@ -32,9 +32,9 @@ images.forEach(element => {
 
 const previousBtn = document.querySelector("#left");
 const nextBtn = document.querySelector("#right");
-
 nextBtn.addEventListener("click", handleButtons);
 previousBtn.addEventListener("click", handleButtons);
+
 
 function handleButtons() {
   if (event.target.id === "left") {
@@ -55,3 +55,7 @@ function handleButtons() {
   const firstImage = document.querySelector("#img_big");
   firstImage.src = src;
 };
+
+/* Реализовать модуль корзины. Создать блок товаров и блок корзины.
+У каждого товара есть кнопка «Купить», при нажатии на которую происходит добавление имени и цены товара в блок корзины. 
+Корзина должна уметь считать общую сумму заказа. */
