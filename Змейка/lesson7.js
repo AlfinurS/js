@@ -101,7 +101,6 @@ function respawn() {
  * Движение змейки
  */
 function move() {
-    //console.log('move',direction);
     // Сборка классов
     var snake_head_classes = snake[snake.length - 1].getAttribute('class').split(' ');
 
@@ -119,8 +118,8 @@ function move() {
         new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x - 1))[0];
     }
     else if (direction == 'x+') {
-        if (coord_x === 19 ) {
-            coord_x = FIELD_SIZE_X -21;
+        if (coord_x + 1 > FIELD_SIZE_X - 1 ) {
+            coord_x = -1;
         }
         new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x + 1))[0];
     }
@@ -131,8 +130,8 @@ function move() {
         new_unit = document.getElementsByClassName('cell-' + (coord_y - 1) + '-' + (coord_x))[0];
     }
     else if (direction == 'y-') {
-        if (coord_y === 19 ) {
-            coord_y = FIELD_SIZE_Y -21;
+        if (coord_y + 1 > FIELD_SIZE_Y - 1 ) {
+            coord_y = -1;
         }
         new_unit = document.getElementsByClassName('cell-' + (coord_y + 1) + '-' + (coord_x))[0];
 
@@ -141,24 +140,21 @@ function move() {
     // Проверки
     // 1) new_unit не часть змейки
     // 2) Змейка не ушла за границу поля
-    //console.log(new_unit);
     if (!isSnakeUnit(new_unit) && !haveBomb(new_unit)) {
         // Добавление новой части змейки
         new_unit.setAttribute('class', new_unit.getAttribute('class') + ' snake-unit');
         snake.push(new_unit);
 
-    if (!haveFood(new_unit)) {
-        // Находим хвост
-        var removed = snake.splice(0, 1)[0];
-        var classes = removed.getAttribute('class').split(' ');
-        // удаляем хвост
-        removed.setAttribute('class', classes[0] + ' ' + classes[1]);
-    }
-        else {
-            finishTheGame();
+        if (!haveFood(new_unit)) {
+            // Находим хвост
+            var removed = snake.splice(0, 1)[0];
+            var classes = removed.getAttribute('class').split(' ');
+            // удаляем хвост
+            removed.setAttribute('class', classes[0] + ' ' + classes[1]);
         }
+    } else {
+        finishTheGame();
     }
-
 }
 
 /**
@@ -261,7 +257,6 @@ function createBomb() {
  * @param e - событие
  */
 function changeDirection(e) {
-    console.log(e);
 	switch (e.keyCode) {
         case 37: // Клавиша влево
             if (direction != 'x+') {
